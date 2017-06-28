@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ goto-line
+ hi-lock-mode
+ describe-coding-system
+ list-colors-display
+ winner-mode-enable
+ global-hl-line-mode
+ smex
+)
+
+;; ----- smex-data -----
+(
+ (start-kbd-macro . 1)
+ (list-packages . 4)
+ (smex . 4)
+ (bs-cycle-next . 1)
+ (helm-mode . 1)
+ (winner-mode-enable . 3)
+ (gtags-find-with-grep . 7)
+ (gtags-find-tag . 1)
+ (global-hl-sexp-mode . 1)
+ (global-hl-line-mode . 3)
+ (list-colors-display . 2)
+ (whitespace-newline-mode . 1)
+ (color-theme-select . 1)
+ (describe-coding-system . 1)
+ (hi-lock-mode . 3)
+ (gtags-find-tag-other-window . 1)
+ (goto-line . 2)
+)

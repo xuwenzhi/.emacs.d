@@ -1,0 +1,83 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/work/www/polaris/app/Service/" . "NewStage/")
+ ("/home/work/www/polaris/app/" . "Service/")
+ ("/home/work/www/api/modules/lianjia-newhouse-api/" . "controllers/")
+ ("/home/work/www/api/modules/" . "lianjia-newhouse-api/")
+ ("/" . "www/")
+ ("/home/work/www/nhservice-api/app/" . "Tasks/")
+ ("/home/work/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/work/www/polaris/app/Service/NewStage/"
+ "/home/work/www/polaris/app/Service/BuildBanInfo/"
+ "/home/work/www/polaris/app/Controllers/"
+ "/home/work/www/api/modules/lianjia-newhouse-api/components/"
+ "/home/work/www/api/modules/lianjia-newhouse-api/controllers/"
+ "/home/work/www/nhservice-api/app/Tasks/"
+ "/home/work/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "GetOpenTimeInfoByBanIdService.php"
+ "GetService.php"
+ "BuildbaninfoController.php"
+ "GetFullOpenTimeService.php"
+ "OnepriceComponent.php"
+ "StageController.php"
+ "ResblockTask.php"
+ "CacheTask.php"
+ "BaseTask.php"
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/work/www/polaris/app/Service/NewStage/" (22867 20165 464523 495000) "GetStageOpenTimeAndLaunchTimeService.php" "ModifyDurationTimeRefService.php" "DeleteOpenTimeService.php" "GetOpenTimeService.php" "./" "ModifyDurationTimeService.php" "ModifyOpenTimeRefService.php" "../" "ModifyFullOpenTimeService.php" "GetFullOpenTimeService.php" "DeleteDurationTimeService.php" "ModifyOpenTimeService.php" "GetDurationTimeRefService.php" "TestService.php" "CreateOpenTimeService.php" "GetDurationTimeService.php" "CreateDurationTimeService.php" "GetOpenTimeInfoByBanIdService.php" "GetDurationTimeInfoByBanIdService.php" "GetOpenTimeRefService.php")
+
+ ("/home/work/www/polaris/app/Service/Project/" (22861 53216 483011 366000) "GetDevelopSpeciallistService.php" "GetProjectStatusInfoService.php" "GetProjectIdByNameService.php" "./" "../" "BaseProjectService.php" "GetExtraInfoService.php" "GetEnumTagsService.php" "GetCountService.php" "GetProjectTagsService.php" "GetResblockIdService.php" "GetProjetImageIntroService.php" "GetProjectVideoIntroService.php" "GetProjectNamesService.php" "GetFullInfoService.php" "GetSimpleInfoService.php")
+
+ ("/home/work/www/polaris/app/Service/BuildBanInfo/" (22850 2439 364013 119000) "DetailService.php" "./" "../" "SyncBuildBanInfoService.php" "CreateService.php" "GetService.php" "ModifyService.php")
+
+ ("/home/work/www/polaris/app/Service/" (22823 58771 860 20000) "Evaluate/" "NewStage/" "BuildPrice/" "./" "News/" "Stage/" "../" "Permit/" "VirtualView/" "BaseService.php" "BuildBanInfo/" "Project/" "Frame/" "Heat/" "Mark/" "Market/")
+
+ ("/home/work/www/polaris/" (22866 55702 947524 730000) ".gitmodules" "readme.txt" "app/" "GPATH" "framework/" "./" "GRTAGS" "composer.json" ".git/" ".idea/" ".gitignore" "public/" "composer.lock" "../" "README.md" "GTAGS" "makefile" "config/" "docs/" "vendor/" "cli/")
+
+ ("/home/work/www/polaris/app/Controllers/" (22866 50010 429524 444000) "SearchController.php" "HeatController.php" "NewstageController.php" "MarkController.php" "EvaluateController.php" "PermitController.php" "./" "ErrorController.php" "IndexController.php" "BuildbaninfoController.php" "../" "MarketController.php" "FrameController.php" "StageController.php" "VirtualviewController.php" "BuildpriceController.php" "ProjectController.php" "NewsController.php")
+
+ ("/home/work/www/polaris/app/" (22775 10463 623767 889000) "views/" "./" "Dao/" "Data/" "../" "Service/" "Controllers/" "Helper/" "Library/" "Common/" "Tasks/")
+
+ ("/home/work/www/api/modules/lianjia-newhouse-api/components/" (22866 25764 164524 605000) "LoupanComponent.php" "PcRouterComponent.php" "CategoryComponent.php" "PermitComponent.php" "ModuleSwitchComponent.php" "./" "RemarkComponent.php" "TpComponent.php" "AgentComponent.php" "VersionComponent.php" "../" "UrlcfgComponent.php" "StageComponent.php" "OnepriceComponent.php" "HeatComponent.php" "FrameComponent.php" "SearchComponent.php" "CustomerComponent.php" "ContentComponent.php" "ArticleComponent.php" "StatisticsComponent.php" "CmsComponent.php" "HouseSearchComponent.php" "DatadigComponent.php" "GuideComponent.php" "ApiComponent.php" "EvaluateComponent.php" "BaseComponent.php" "ActivityComponent.php" "VirtualViewComponent.php" "HouseComponent.php" "ModuleComponent.php" "IqiyiComponent.php" "AccountComponent.php" "PriceComponent.php" "FilterComponent.php" "ConditionComponent.php" "FollowComponent.php" "MRouterComponent.php" "HdicComponent.php" "RouterComponent.php" "HouseFilterComponent.php" "LinknewsComponent.php")
+
+ ("/home/work/www/api/modules/lianjia-newhouse-api/controllers/" (22866 25099 235524 454000) "SiteController.php" "HouseController.php" "RemarkController.php" "PriceController.php" "NewhouseController.php" "DidiController.php" "ResblockController.php" "UserController.php" "./" "ApiBaseController.php" "../" "BrokerController.php" "FrameController.php" "UrlController.php" "StageController.php" "VerifycouponController.php" "Newhousev2Controller.php" "AnchorController.php" "CmsController.php" "CustomerController.php" "TestController.php" "MaincenterController.php" "ArticleController.php" "DistrictguideController.php" "CouponsController.php" "ModuleController.php")
+
+ ("/home/work/www/api/modules/lianjia-newhouse-api/" (22864 57085 154317 263000) "scripts/" "./" "../" "common/" "controllers/" "README.txt" "config/" "components/")
+
+ ("/home/work/www/api/modules/" (22864 57085 845318 459000) "./" "lianjia-data/" "../" "lianjia-newhouse-api/")
+
+ ("/home/work/www/api/" (22866 47270 377524 235000) "GPATH" "framework/" "./" "GRTAGS" "modules/" "composer.json" ".git/" ".idea/" ".gitignore" "composer.lock" "../" "GTAGS" "htdocs/" ".arcconfig" "protected/" "makefile" "redis-shell.sh" "vendor/" "#makefile#")
+
+ ("/home/work/www/nhservice-api/app/Tasks/" (22850 10219 199745 161000) "CodeToolTask.php" "TestTask.php" "./" "BaseTask.php" "../" "ResblockTask.php" "CacheTask.php")
+
+ ("/home/work/" (22866 41161 932524 12000) "purcell_emacs.d/" ".emacs.d/" ".bash_logout" ".zcompdump-testnewhapi-4.3.11" ".subversion/" ".vim/" ".rbenv/" ".sqlite_history" ".config/" ".gem/" ".lesshst" ".zsh_history" "./" ".rediscli_history" ".zcompdump" ".bashrc" ".bundle/" ".composer/" "html/" ".bash_history" ".smex-items" "../" "run/" ".zshrc" ".vimrc" ".gitconfig" ".gnupg/" ".bash_profile" "local/" ".pki/" "bin/" ".TemporaryItems/" "var/" "www/" "software/" ".viminfo" "tmp/" ".backups/" ".zshrc.pre-oh-my-zsh" ".emacs.keyfreq" ".npm/" ".gemrc" ".ssh/" ".neocon/" ".zcompdump-localhost-4.3.11" ".zsh-update")
+
+ ("/home/work/www/nhservice-api/app/Controllers/" (22866 39494 691523 298000) "./" "ErrorController.php" "IndexController.php" "App/" "../" "BaseController.php" "M/" "Pc/")
+
+ ("/home/work/www/nhservice-api/app/" (22848 42286 754318 258000) "./" "Dao/" "../" "Controllers/" "Library/" "Common/" "Tasks/" "Logics/")
+
+ ("/home/work/.emacs.d/" (22866 40475 93523 565000) ".gitmodules" "recentf" "lisp/" "solarized/" "company-statistics-cache.el~" "./" "ac-comphist.dat" ".git/" "readme.md" ".smex-items" "../" "php-mode/" "backups/" "elpa/" "auto-save-list/" "company-statistics-cache.el" "places" "init.el" "color-theme/")
+
+ ("/home/" (22296 47542 989312 574000) "./" "vagrant/" "../" "www-data/" "lost+found/" "work/")
+
+ ("/home/work/www/" (22865 36781 159524 544000) "nhservice-api/" ".test.php.swp" "lianjia-newh-web/" "./" ".idea/" ".weibocs/" "../" "test.rb~" "phpinfo.php" "collapsar/" "prometheus/" "polaris/" "cms/" "api/" "sample/" "luminosity/" "index.php" "cosmos/" "galaxy/" "titan/" "xinfang/" "test.rb" "hulk-newh/")
+
+ ("/home/work/www/nhservice-api/" (22865 31799 225523 798000) ".gitmodules" "app/" "GPATH" "framework/" "./" "phpunit.xml" "GRTAGS" "composer.json" ".git/" ".idea/" ".gitignore" "public/" "composer.lock" "../" "makefile.sh" "README.md" "GTAGS" "config/" "vendor/" "cli/" "tests/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

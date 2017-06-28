@@ -1,0 +1,21 @@
+#+TITLE:	README for winner-mode-enable
+#+AUTHOR:	Jason Lewis
+#+EMAIL:	jason@dickson.st
+#+DATE:		2015-01-23
+#+UPDATE:	19:58:48
+#+STARTUP:	content
+
+* What is this?
+
+The main purpose of this file is to enable winner-mode. By default
+winner-mode is included in emacs since version 20 however it is not
+enabled.
+
+This is an experiment in making packages that enable micro features.
+An idea I have had for somet time that I am finally testing out.
+
+* Install
+This package is on marmalade. Install it from marmalade
+#+BEGIN_SRC lisp
+package-install enable-marmalade
+#+END_SRC
