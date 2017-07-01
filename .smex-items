@@ -1,25 +1,25 @@
 
 ;; ----- smex-history -----
 (
+ org-mode
  goto-line
- hi-lock-mode
- describe-coding-system
- list-colors-display
- winner-mode-enable
- global-hl-line-mode
+ list-packages
  smex
+ flymake-mode
+ hi-lock-mode
+ winner-mode-enable
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 4)
+ (list-packages . 8)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
  (winner-mode-enable . 3)
- (gtags-find-with-grep . 7)
- (gtags-find-tag . 1)
+ (gtags-find-with-grep . 8)
+ (gtags-find-tag . 6)
  (global-hl-sexp-mode . 1)
  (global-hl-line-mode . 3)
  (list-colors-display . 2)
@@ -27,6 +27,21 @@
  (color-theme-select . 1)
  (describe-coding-system . 1)
  (hi-lock-mode . 3)
- (gtags-find-tag-other-window . 1)
+ (gtags-find-tag-other-window . 4)
  (goto-line . 2)
+ (gtags-find-symbol . 1)
+ (gtags-find-file . 1)
+ (flymake-mode . 3)
+ (flymake-php-load . 3)
+ (flymake-start-syntax-check . 1)
+ (flymake-compile . 1)
+ (flymake-display-err-menu-for-current-line . 1)
+ (flymake-goto-next-error . 2)
+ (flymake-restart-syntax-check . 1)
+ (helm-gtags-mode . 1)
+ (helm-gtags-find-tag . 1)
+ (gtags-find-rtag . 2)
+ (org-mode . 7)
+ (org-info . 1)
+ (org-goto . 1)
 )

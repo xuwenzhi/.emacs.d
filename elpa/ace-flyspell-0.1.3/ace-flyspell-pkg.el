@@ -1,0 +1,1 @@
+(define-package "ace-flyspell" "0.1.3" "Jump to and correct spelling errors using `ace-jump-mode' and flyspell" '((avy "0.4.0")) :commit "044d38fb8eb390ef1f51cf92cfe5c4ffd103044c" :url "https://github.com/cute-jumper/ace-flyspell" :keywords '("extensions"))

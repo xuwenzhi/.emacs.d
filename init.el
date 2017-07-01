@@ -14,7 +14,7 @@
 
 ;; 显示行号
 (global-linum-mode 1) ; always show line numbers                              
-(setq linum-format "%3d| ")  ;set format
+(setq linum-format "%2d|")  ;set format
 
 
 ;;----------------------------------------------------------------------------
@@ -35,6 +35,9 @@
 
 (setq emacs-load-start-time (current-time))
 
+;;为了org-mode
+(setq ispell-program-name "/usr/bin/aspell")
+
 (require 'init-lisp)
 (require 'init-elpa)
 
@@ -50,9 +53,13 @@
 ;;快捷键专区
 
 
-
+;;php
 (require 'php-mode)
+
+;;javascript
 (require 'init-javascript)
+
+
 (load "init-gtags")
 ;(require 'auto-complete)
 ;;自动补全界面
