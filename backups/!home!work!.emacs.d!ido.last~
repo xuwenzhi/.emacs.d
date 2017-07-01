@@ -12,10 +12,10 @@
  ("/home/work/www/api/modules/lianjia-newhouse-api/" . "components/")
  ("/home/work/www/api/modules/" . "lianjia-newhouse-api/")
  ("/home/work/www/api/" . "modules/")
- ("/home/work/www/" . "nhservice-api/")
+ ("/home/work/www/" . "xinfang/")
  ("/home/work/www/nhservice-api/" . "app/")
  ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/views/" . "xinfang/")
- ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/" . "components/")
+ ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/" . "controllers/")
  ("/home/work/www/xinfang/modules/" . "lianjia-newh-xinfang/")
  ("/home/work/www/xinfang/" . "protected/")
  ("/home/work/www/hulk-newh/modules/m/" . "controllers/")
@@ -26,11 +26,13 @@
  ("/home/work/www/nhservice-api/app/" . "Controllers/")
  ("/home/work/www/lianjia-newh-web/modules/lianjia-newh/" . "controllers/")
  ("/home/work/www/lianjia-newh-web/modules/" . "lianjia-newh/")
- ("/home/work/www/xinfang/protected/" . "extensions/")
+ ("/home/work/www/xinfang/protected/" . "config/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/work/www/xinfang/protected/config/"
+ "/home/work/www/xinfang/modules/lianjia-newh-xinfang/controllers/"
  "/home/work/www/"
  "/home/work/www/nhservice-api/config/"
  "/home/work/www/nhservice-api/.git/hooks/"
@@ -41,7 +43,6 @@
  "/home/work/www/nhservice-api/app/Logics/"
  "/home/work/www/api/modules/lianjia-newhouse-api/controllers/"
  "/home/work/www/api/modules/lianjia-newhouse-api/common/"
- "/home/work/www/xinfang/protected/config/"
  "/home/work/www/polaris/config/"
  "/home/work/.emacs.d/"
  "/home/work/www/polaris/app/Controllers/"
@@ -57,7 +58,6 @@
  "/home/work/www/api/protected/config/"
  "/home/work/www/xinfang/modules/lianjia-newh-xinfang/components/"
  "/home/work/www/xinfang/protected/components/"
- "/home/work/www/xinfang/modules/lianjia-newh-xinfang/controllers/"
  "/home/work/www/nhservice-api/app/Controllers/M/"
  "/home/work/www/xinfang/modules/lianjia-newh-xinfang/views/xinfang/detail/"
  "/home/work/www/xinfang/modules/lianjia-newh-xinfang/views/xinfang/"
@@ -67,8 +67,9 @@
 
 ;; ----- ido-work-file-list -----
 (
- "test.rb"
  "dev.php"
+ "LoupanController.php"
+ "test.rb"
  "pre-commit"
  ".gitconfig"
  "UserController.php"
@@ -76,11 +77,18 @@
  "LinknewsComponent.php"
  "PanLogic.php"
  "NewhouseController.php"
- "PcRouterComponent.php"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/work/www/xinfang/protected/config/" (22870 53425 80524 147000) "dev.php" "test.php" "./" "prod.php" "../" "lianjia-newhouse-xinfang.conf")
+
+ ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/controllers/" (22870 53644 652524 147000) "SiteController.php" "DetailController.php" "QuyuController.php" "EvaluateController.php" "./" "../" "FileController.php" "XinfangController.php" "BaseController.php" "ApiController.php" "AnchorController.php" "PinglunController.php" "LoupanController.php" "SitemapController.php")
+
+ ("/home/work/www/" (22869 63209 746524 146000) "nhservice-api/" "lianjia-newh-web/" "./" ".weibocs/" "../" "phpinfo.php" "collapsar/" "prometheus/" "polaris/" "cms/" "api/" "sample/" "luminosity/" "index.php" "cosmos/" "galaxy/" "titan/" "xinfang/" "test.rb" "hulk-newh/")
+
+ ("/home/work/www/xinfang/" (22870 53474 278523 796000) "GPATH" "framework/" "./" "GRTAGS" "modules/" ".git/" ".idea/" "static/" ".gitignore" "../" "Makefile" "GTAGS" "htdocs/" "protected/")
+
  ("/home/work/www/nhservice-api/config/" (22869 48684 205523 26000) "service.php" "dev.php" "test.php" "./" "prod.php" "routers.php" "loader.php" "../" "nginx.conf" "cli_service.php")
 
  ("/home/work/www/nhservice-api/.git/hooks/" (22868 27172 596523 199000) "post-update.sample" "commit-msg.sample" "prepare-commit-msg.sample" "./" "pre-applypatch.sample" "update.sample" "../" "pre-rebase.sample" "applypatch-msg.sample" "pre-commit.sample" "pre-commit" "post-receive.sample" "post-commit.sample")
@@ -113,10 +121,6 @@
 
  ("/home/work/www/api/" (22866 47270 377524 235000) "GPATH" "framework/" "./" "GRTAGS" "modules/" "composer.json" ".git/" ".idea/" ".gitignore" "composer.lock" "../" "GTAGS" "htdocs/" ".arcconfig" "protected/" "makefile" "redis-shell.sh" "vendor/" "#makefile#")
 
- ("/home/work/www/xinfang/protected/config/" (22867 62349 160524 147000) "dev.php" "test.php" "./" "prod.php" "../" "lianjia-newhouse-xinfang.conf")
-
- ("/home/work/www/xinfang/" (22867 62349 67524 27000) "GPATH" "framework/" "./" "GRTAGS" "modules/" ".git/" ".idea/" "static/" ".gitignore" "../" "Makefile" "GTAGS" "htdocs/" "protected/")
-
  ("/home/work/www/nhservice-api/app/Controllers/" (22867 60306 840524 147000) "./" "ErrorController.php" "IndexController.php" "App/" "../" "BaseController.php" "M/" "Pc/")
 
  ("/home/work/www/nhservice-api/app/" (22867 60306 848524 146000) "./" "Dao/" "../" "Controllers/" "Library/" "Common/" "Tasks/" "Logics/")
@@ -138,8 +142,6 @@
  ("/home/work/www/polaris/app/Data/" (22868 28467 513524 156000) "HeatData.php" "BuildBanInfoData.php" "VirtualViewData.php" "BuildFrameData.php" "BaseData.php" "PermitRefData.php" "StageData.php" "BuildPriceData.php" "ProjectData.php" "./" "YuanYangOnePriceData.php" "BuildImageIntroFilesData.php" "../" "HdicData.php" "EvaluateFavoriteData.php" "BuildImageIntroTopicsData.php" "PermitData.php" "BuildImageIntroData.php" "MarketInfoData.php" "NewStageOpenTimeData.php" "BuildLinkNewsData.php" "EvaluateData.php" "Lvju/" "BuildVideoIntroFilesData.php" "EvaluateFeedbackData.php" "BuildExtraData.php" "BuildVideoIntroData.php" "BuildInfoData.php" "BuildMarkData.php" "NewStageDurationTimeData.php")
 
  ("/home/work/www/polaris/app/Dao/Lvju/" (22868 28467 513524 156000) "LvjuBuildInfoDao.php" "LvjuBuildPriceDao.php" "./" "LvjuBuildFrameDao.php" "../" "LvjuStageDao.php")
-
- ("/home/work/www/" (22868 8018 716523 740000) "nhservice-api/" ".test.php.swp" "lianjia-newh-web/" "./" ".idea/" ".weibocs/" "../" "phpinfo.php" "collapsar/" "prometheus/" "polaris/" "cms/" "api/" "sample/" "luminosity/" "index.php" "cosmos/" "galaxy/" "titan/" "xinfang/" "test.rb" "hulk-newh/")
 
  ("/home/work/www/polaris/app/Dao/" (22866 50019 612524 147000) "BuildVirtualViewDao.php" "BuildPermitDao.php" "StagePushDao.php" "BuildPermitOldDao.php" "NewStageOpenTimeDao.php" "BuildInfoDao.php" "NewStageDurationTimeDao.php" "NewStageOpenTimeRefDao.php" "BaseDao.php" "BuildVideoIntroFilesDao.php" "./" "BuildImageIntroFilesDao.php" "BuildInfoExtraDao.php" "../" "BuildMarkDao.php" "BuildPermitLogDao.php" "BuildImageIntroDao.php" "EvaluateFeedbackDao.php" "BuildHeatDataDao.php" "MarketInfoDao.php" "BuildPriceDao.php" "BuildFrameDao.php" "BuildVideoIntroDao.php" "BuildVirtualViewFilesDao.php" "NewStageDurationTimeRefDao.php" "BuildImageIntroTopicsDao.php" "Lvju/" "StageDao.php" "BuildPermitRefDao.php" "EvaluateDao.php" "BuildBanInfoDao.php" "EvaluateFavoriteDao.php" "BuildLinkNewsDao.php")
 
@@ -168,8 +170,6 @@
  ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/components/" (22856 41092 525621 220000) "SearchCriteriaManager.php" "./" "RemarkComponent.php" "DongtaiComponent.php" "../" "StageComponent.php" "PriceTrendComponent.php" "SearchComponent.php" "GuideComponent.php" "EvaluateComponent.php" "ResblockComponent.php")
 
  ("/home/work/www/xinfang/protected/components/" (22856 41064 946621 219000) "RestfulController.php" "ApcuCache.php" "MAdapter.php" "HttpRequest.php" "Solr.php" "./" "GoLogRoute.php" "YacCache.php" "../" "InstantLogger.php" "FrontEnd.php" "JsonRpcController.php" "HttpsRedirect.php" "FileLogRoute.php" "GeTui.php" "WebUser.php" "Session.php" "UserBan.php" "ActiveRecord.php" "Widget.php" "RedisProxy.php" "SeUser.php" "ErrorHandler.php")
-
- ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/controllers/" (22856 41043 606621 219000) "SiteController.php" "DetailController.php" "QuyuController.php" "EvaluateController.php" "./" "../" "FileController.php" "XinfangController.php" "BaseController.php" "ApiController.php" "AnchorController.php" "PinglunController.php" "LoupanController.php" "SitemapController.php")
 
  ("/home/work/www/xinfang/modules/lianjia-newh-www/" (22297 41630 0 0) "views/" "./" "../" "controllers/" "config/")
 
