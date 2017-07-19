@@ -1,25 +1,25 @@
 
 ;; ----- smex-history -----
 (
- org-mode
  goto-line
+ mail
  list-packages
+ org-mode
  smex
+ eww
  flymake-mode
- hi-lock-mode
- winner-mode-enable
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 8)
+ (list-packages . 11)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
  (winner-mode-enable . 3)
- (gtags-find-with-grep . 8)
- (gtags-find-tag . 6)
+ (gtags-find-with-grep . 23)
+ (gtags-find-tag . 8)
  (global-hl-sexp-mode . 1)
  (global-hl-line-mode . 3)
  (list-colors-display . 2)
@@ -27,8 +27,8 @@
  (color-theme-select . 1)
  (describe-coding-system . 1)
  (hi-lock-mode . 3)
- (gtags-find-tag-other-window . 4)
- (goto-line . 2)
+ (gtags-find-tag-other-window . 6)
+ (goto-line . 4)
  (gtags-find-symbol . 1)
  (gtags-find-file . 1)
  (flymake-mode . 3)
@@ -44,4 +44,33 @@
  (org-mode . 7)
  (org-info . 1)
  (org-goto . 1)
+ (php-mode . 10)
+ (ac-php-core-eldoc-setup . 1)
+ (ac-php-remake-tags-all . 2)
+ (ac-php-remake-tags . 1)
+ (php-mode-version . 1)
+ (php-mode-menu . 1)
+ (indent-region . 2)
+ (mark-defun . 1)
+ (indent-new-comment-line . 1)
+ (c-indent-line-or-region . 1)
+ (web-mode . 1)
+ (time-stamp . 1)
+ (calendar . 1)
+ (dictionary . 1)
+ (doctor . 1)
+ (web-mode-reload . 2)
+ (display-time . 1)
+ (mail . 2)
+ (eww . 3)
+ (mail-send . 2)
+ (mail-mode . 1)
+ (smtpmail-send-queued-mail . 1)
+ (mail-sent-via . 1)
+ (mail-to . 1)
+ (mail-send-and-exit . 1)
+ (mail-yank-region . 1)
+ (mail-text . 1)
+ (mail-dont-send . 1)
+ (mail-bcc . 1)
 )

@@ -9,9 +9,9 @@
                     (replace-regexp-in-string
                      "\n$" ""    ; remove trailing linebreak
                      (shell-command-to-string "fortune"))))
-                (concat ";; Happy hacking "
-                        (or user-login-name "")
-                        " - Emacs loves you!\n\n")))
+                (concat ";; Happy Hacking!\n"
+                       ; (or user-login-name "")
+                        "      - Emacs loves you!\n\n")))
 
 ;; racket
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . lisp-mode))
