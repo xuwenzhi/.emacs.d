@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
+ color-theme-select
+ list-packages
  goto-line
  mail
- list-packages
  org-mode
  smex
  eww
- flymake-mode
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 11)
+ (list-packages . 12)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
@@ -24,7 +24,7 @@
  (global-hl-line-mode . 3)
  (list-colors-display . 2)
  (whitespace-newline-mode . 1)
- (color-theme-select . 1)
+ (color-theme-select . 6)
  (describe-coding-system . 1)
  (hi-lock-mode . 3)
  (gtags-find-tag-other-window . 6)
@@ -73,4 +73,5 @@
  (mail-text . 1)
  (mail-dont-send . 1)
  (mail-bcc . 1)
+ (color-theme-taylor . 1)
 )

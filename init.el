@@ -66,6 +66,28 @@
 (package-initialize)
 
 
+;; ibuffer做一个漂亮的buffer列表界面
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; 切换buffer
+(require 'swbuff)
+(global-set-key (kbd "") 'swbuff-switch-to-previous-buffer)
+(global-set-key (kbd "") 'swbuff-switch-to-next-buffer)
+(setq swbuff-exclude-buffer-regexps 
+           '("^ " "\\*.*\\*"))
+
+(setq swbuff-status-window-layout 'scroll)
+(setq swbuff-clear-delay 1)
+(setq swbuff-separator "|")
+(setq swbuff-window-min-text-height 1)
+
+;; 表格库
+(autoload 'table-insert "table" "WYGIWYS table editor")
+
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-oswald)
 ;;快捷键专区
 
 

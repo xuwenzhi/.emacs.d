@@ -3566,7 +3566,7 @@
 		  (20160725 724)))
 		"Sound effects for Emacs" single])
  (emacs-home .
-	     [(20170624 1315)
+	     [(20170712 2135)
 	      ((emacs
 		(24))
 	       (cl-lib
