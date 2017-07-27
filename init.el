@@ -82,6 +82,26 @@
 (setq swbuff-separator "|")
 (setq swbuff-window-min-text-height 1)
 
+;;switch-window
+(require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
+(global-set-key (kbd "C-x 1") 'switch-window-then-maximize)
+(global-set-key (kbd "C-x 0") 'switch-window-then-delete)
+(setq switch-window-increase 6) ;Increase or decrease this number.
+(setq switch-window-threshold 2)
+(setq switch-window-auto-resize-window t)
+(setq switch-window-default-window-size 0.8) ;80% of frame size
+
+;;ace-jump
+(autoload
+    'ace-jump-mode
+      "ace-jump-mode" t)
+(eval-after-load "ace-jump-mode"
+                   '(ace-jump-mode-enable-mark-sync))
+
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
 ;; 表格库
 (autoload 'table-insert "table" "WYGIWYS table editor")
 
@@ -90,8 +110,9 @@
 (color-theme-oswald)
 ;;快捷键专区
 
+(global-set-key (kbd "C-t") 'goto-line)
 
-;;php
+;;php.
 (require 'php-mode)
 (php-mode)
 
