@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
- color-theme-select
  list-packages
+ web-mode
+ eww
  goto-line
  mail
  org-mode
  smex
- eww
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 12)
+ (list-packages . 15)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
@@ -24,7 +24,7 @@
  (global-hl-line-mode . 3)
  (list-colors-display . 2)
  (whitespace-newline-mode . 1)
- (color-theme-select . 6)
+ (color-theme-select . 2)
  (describe-coding-system . 1)
  (hi-lock-mode . 3)
  (gtags-find-tag-other-window . 6)
@@ -54,7 +54,7 @@
  (mark-defun . 1)
  (indent-new-comment-line . 1)
  (c-indent-line-or-region . 1)
- (web-mode . 1)
+ (web-mode . 2)
  (time-stamp . 1)
  (calendar . 1)
  (dictionary . 1)
@@ -62,7 +62,7 @@
  (web-mode-reload . 2)
  (display-time . 1)
  (mail . 2)
- (eww . 3)
+ (eww . 6)
  (mail-send . 2)
  (mail-mode . 1)
  (smtpmail-send-queued-mail . 1)
@@ -73,5 +73,4 @@
  (mail-text . 1)
  (mail-dont-send . 1)
  (mail-bcc . 1)
- (color-theme-taylor . 1)
 )
