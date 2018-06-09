@@ -2,6 +2,11 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/app/Http/" . "Controllers/")
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/app/" . "Http/")
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/" . "app/")
+ ("/Users/xuwenzhi/hack/dnmp/www/" . "kepler/")
+ ("/Users/xuwenzhi/hack/dnmp/" . "www/")
  ("/home/work/www/cms/modules/" . "lianjia-newh-cms/")
  ("/home/work/www/cms/modules/lianjia-newh-cms/views/" . "nav/")
  ("/home/work/www/cms/modules/lianjia-newh-cms/" . "controllers/")
@@ -52,6 +57,8 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/xuwenzhi/hack/dnmp/www/kepler/app/Http/Controllers/"
+ "/Users/xuwenzhi/hack/dnmp/www/kepler/app/Http/"
  "/home/work/www/hulk-newh/protected/config/"
  "/home/work/www/nhservice-api/app/Common/"
  "/home/work/www/cms/modules/lianjia-newh-cms/controllers/"
@@ -100,12 +107,12 @@
  "/home/work/www/xinfang/protected/extensions/"
  "/home/work/www/polaris/config/"
  "/home/work/www/polaris/app/Controllers/"
- "/home/work/.emacs.d/lisp/"
- "/home/work/www/polaris/app/Service/BuildPrice/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "AgentController.php"
+ "routes.php"
  "dev.sample.php"
  "prod.php"
  "Constants.php"
@@ -114,12 +121,26 @@
  "makefile"
  "BannerController.php"
  "ArticleController.php"
- "left.tpl"
- "LinknewsController.php"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/xuwenzhi/" (23323 18964 435343 221000) ".composer/" ".viminfo" ".shuttle.json" ".bash_history" ".cache/" "Downloads/" "iCloud Drive（归档）/" ".oh-my-zsh/" ".gem/" ".bash_profile" "SparkData/" ".wakatime.log" "Documents/" ".zshrc.omz-uninstalled-20160814152848" ".Trash/" ".zsh-update" ".profile" "Applications/" "Movies/" ".ssh/" ".sh_history" ".cisco/" "Public/" ".neocon/" ".bash_sessions/" ".cups/" ".emacs.d/" ".ShadowsocksX-NG/" ".lobo/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "hack/" ".zcompdump-xuwenzhi的MBP-5.3" ".bundle/" ".513899.padl" ".wakatime/" "Pictures/" ".wakatime.db" ".local/" ".zcompdump-xuwenzhi的MBP-5.2" ".arcrc" ".zshrc" ".zshrc.pre-oh-my-zsh" ".subversion/" ".vagrant.d/" ".zcompdump-xuwenzhi的MBP-5.0.8" ".sogouinput/" ".CFUserTextEncoding" ".ShadowsocksX/" ".DS_Store" ".anyconnect" ".docker/" ".wns/" ".wakatime.cfg" "Music/" ".config/" ".SwitchHosts/" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/app/Http/Controllers/" (23321 63232 155583 50000) "CaptchaController.php" "MapController.php" "ContentController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "XmlController.php" "CommentController.php" "AgentController.php" "DetailController.php" "Auth/" "Controller.php" "DirecttrainController.php" "RecommendController.php" "HomeController.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/app/Http/" (23322 55340 201979 331000) "Kernel.php" "Controllers/" "helpers.php" "routes.php" "Requests/" "Middleware/" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/app/" (23321 63232 171017 193000) "Console/" "Listeners/" "Logics/" "Http/" "Exceptions/" "Library/" "Providers/" "Clients/" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/www/kepler/" (23321 63232 924108 988000) "vendor/" "env.prod" "composer.json" ".git/" "env.test" "static/" "package.json" ".gitignore" "public/" "env.dev" "artisan" "README.md" "tests/" "resources/" "makefile" "config/" "app/" "bootstrap/" "phpunit.xml" "server.php" "composer.lock" "database/" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/www/" (23321 64232 489984 83000) "mars/" "nhservice-api/" "phoenix/" "moon/" "kepler/" "../" "./")
+
+ ("/Users/xuwenzhi/hack/dnmp/" (23322 35684 423106 224000) "applogs/" "conf/" ".git/" "docker-compose54.yml" "docker-compose56.yml" "docker-compose.yml" "log/" ".gitignore" ".dockerignore" "README.md" "www/" "php/" "LICENSE" "cache/" ".DS_Store" "../" "./")
+
+ ("/Users/xuwenzhi/hack/" (23323 13361 757986 981000) ".vagrant/" "dnmp/" ".DS_Store" "../" "./")
+
  ("/home/work/www/hulk-newh/protected/config/" (22905 47194 296029 281000) "dev.php" "test.php" "./" "prod.php" "../" "lianjia.com.conf" "dev.sample.php" "prod.aws.php" "pre.php")
 
  ("/home/work/www/nhservice-api/app/Common/" (22904 14661 667673 190000) "Constants.php" "ResblockConstants.php" "./" "../" "BizResult.php" "HouseResConstants.php" "BizException.php")
@@ -303,22 +324,6 @@
  ("/home/work/www/polaris/app/" (22775 10463 623767 889000) "views/" "./" "Dao/" "Data/" "../" "Service/" "Controllers/" "Helper/" "Library/" "Common/" "Tasks/")
 
  ("/home/work/www/lianjia-newh-web/modules/lianjia-newh/controllers/" (22868 22514 688524 146000) "SiteController.php" "SensitiveController.php" "ImageintroController.php" "NewstageController.php" "MarkController.php" "EvaluateController.php" "./" "VirtualViewController.php" "RoleController.php" "TraitQueryList.php" "BuildAttachVedioController.php" "CompanyController.php" "BuildAttachWordController.php" "BaseNewhServerController.php" "BanController.php" "../" "DistrictController.php" "JsonconfigController.php" "AssetController.php" "HdcconsumeController.php" "MarketController.php" "VideointroController.php" "CommController.php" "BaseBuildAttachController.php" "StageController.php" "ApiController.php" "UploadController.php" "BuildingController.php" "LinknewsController.php" "CaseintroController.php" "SaledataController.php" "LogController.php")
-
- ("/home/work/www/lianjia-newh-web/modules/lianjia-newh/common/" (22868 26155 176524 144000) "./" "#NewHouseConstants.php#" "../" ".#NewHouseConstants.php" "NewHouseConstants.php")
-
- ("/home/work/www/lianjia-newh-web/modules/lianjia-newh/" (22842 2900 323008 905000) "data/" "./" "../" "common/" "models/" "controllers/" "logics/" "config/" "view/" "script/" "components/")
-
- ("/home/work/www/lianjia-newh-web/modules/" (22842 2900 441008 547000) "./" "../" "lianjia-newh/")
-
- ("/home/work/www/lianjia-newh-web/protected/config/" (22868 26085 306524 147000) "db_prod.php" "dev.php" "db_test.php" "test.php" "./" "prod.php" "../" "lianjia.com.conf" "db_dev.php")
-
- ("/home/work/www/lianjia-newh-web/protected/" (22833 12009 990562 438000) "tables/" "scripts/" "yii.php" "data/" "utils/" "./" "composer.json" "composer.lock" "extensions/" "../" "config/" "widgets/" "vendor/" "components/")
-
- ("/home/work/www/lianjia-newh-web/" (22868 22514 685524 146000) "framework/" "./" "modules/" "composer.json" ".git/" ".idea/" ".gitignore" "composer.lock" "../" "htdocs/" "protected/" "makefile" "vendor/")
-
- ("/home/work/www/lianjia-newh-web/modules/lianjia-newh/view/tpl/jsonconfig/" (22859 35390 918604 108000) "edit.tpl" "./" "../" "create.tpl" "create.tpl~" "list.tpl")
-
- ("/home/work/www/xinfang/modules/lianjia-newh-xinfang/components/" (22856 41092 525621 220000) "SearchCriteriaManager.php" "./" "RemarkComponent.php" "DongtaiComponent.php" "../" "StageComponent.php" "PriceTrendComponent.php" "SearchComponent.php" "GuideComponent.php" "EvaluateComponent.php" "ResblockComponent.php")
 )
 
 ;; ----- ido-unc-hosts-cache -----
