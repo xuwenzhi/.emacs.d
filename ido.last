@@ -2,18 +2,16 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/Http/" . "Controllers/")
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/" . "Http/")
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/" . "Http/")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/" . "Library/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/" . "Shellapp/")
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/" . "Logics/")
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/" . "config/")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/" . "Common/")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/" . "app/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/" . "config/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/conf/" . "cli_php.ini/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/kepler/app/Http/" . "Controllers/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/kepler/app/" . "Http/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/kepler/" . "app/")
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/" . "nhservice-api/")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/" . "moon/")
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/" . "conf/")
  ("/Users/xuwenzhi/hack/" . "docker-php7-phalcon/")
  ("/Users/xuwenzhi/hack/dnmp/php/php72/" . "cphalcon/")
@@ -69,25 +67,25 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/Http/Controllers/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/Http/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellm/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Clients/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/config/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Library/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Logics/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/Controllers/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/config/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/Search/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellapp/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Common/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Logics/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Library/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/Search/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/framework/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellm/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/config/"
+ "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellapp/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/M/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Dao/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Tasks/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Api/"
- "/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/config/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/kepler/app/Http/Controllers/"
  "/Users/xuwenzhi/hack/docker-php7-phalcon/www/kepler/app/Library/"
@@ -123,54 +121,41 @@
 
 ;; ----- ido-work-file-list -----
 (
- "Controller.php"
- "ActivityController.php"
- "CommentController.php"
- "AgentController.php"
- "AnswerController.php"
+ "ConfigController.php"
+ "NewhouseClient.php"
+ "NewhouseApiClient.php"
+ "constants.php"
+ "Util.php"
+ "ResblockLogic.php"
+ "env.dev"
  "ResblockController.php"
+ "BusinessConstants.php"
  "routes.php"
- "composer.json"
- "dev.php"
- "SearchsugPush.php"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/Http/Controllers/" (23331 34291 931580 298000) "CaptchaController.php" "TopicController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "ActivityController.php" "MediaController.php" "CommentController.php" "AgentController.php" "Auth/" "QuestionController.php" "RankController.php" "AnswerController.php" "Controller.php" "DirectTrainController.php" "HomeController.php" "WeixinController.php" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellm/" (23331 37595 820343 633000) "RemarkController.php" "TopicController.php" "BaseController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "VideoController.php" "DiscountController.php" "EvaluateController.php" "ActivityController.php" "ConfigController.php" "FollowController.php" "CommentController.php" "AgentController.php" "PromotionController.php" "QuestionController.php" "RankController.php" "VirtualviewController.php" "AnswerController.php" "DirecttrainController.php" "UserController.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/Http/" (23323 46512 359327 471000) "Kernel.php" "Controllers/" "helpers.php" "routes.php" "Requests/" "Middleware/" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Clients/" (23331 13443 734667 308000) "AbtestClient.php" "NewhouseClient.php" "SmsClient.php" "NewhouseApiClient.php" "SessionClient.php" "WeixinClient.php" "BaseClient.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/app/" (23323 46512 391628 202000) "Console/" "Listeners/" "Logics/" "Http/" "Exceptions/" "Library/" "Providers/" "Clients/" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/config/" (23331 12528 619415 400000) "filesystems.php" "client.php" "page.php" "view.php" "broadcasting.php" "constants.php" "queue.php" "fe.php" "session.php" "cache.php" "database.php" "services.php" "compile.php" "mail.php" "app.php" "auth.php" "ytake-laravel-smarty.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/mars/" (23323 46512 656162 840000) "vendor/" "env.prod" "composer.json" ".git" "env.test" ".gitattributes" "static/" "package.json" ".gitignore" "public/" "env.dev" "artisan" "README.md" "storage/" "tests/" "resources/" "makefile" "config/" "app/" "bootstrap/" "phpunit.xml" "server.php" "composer.lock" ".arcconfig" "database/" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Library/" (23331 13176 763109 161000) "PageUtil.php" "Util.php" "Captcha.php" "Ip.php" "Fe.php" "Seo.php" "User.php" "Ipdb/" "Validater.php" "City.php" "Logger.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Logics/" (23331 12528 618243 879000) "SearchLogic.php" "FrameLogic.php" "SearchConditionLogic.php" "AnswerLogic.php" "TopicLogic.php" "ModuleLogic.php" "DirectTrainLogic.php" "SemLogic.php" "BaseLogic.php" "QuestionLogic.php" "ActivityLogic.php" "ResblockLogic.php" "MediaLogic.php" "SearchParserLogic.php" "DiscountLogic.php" "UserLogic.php" "WeixinLogic.php" "AgentLogic.php" "RankLogic.php" "CommentLogic.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/" (23330 10354 53072 455000) "mars/" "titan/" "polaris/" ".gitignore" "nhservice-api/" "cosmos/" "phoenix/" "moon/" "kepler/" ".DS_Store" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/" (23331 12654 26506 682000) "vendor/" "env.prod" "composer.json" ".git" "env.test" ".gitattributes" "static/" "package.json" ".gitignore" "public/" "env.dev" "artisan" "README.md" "storage/" "tests/" "resources/" "makefile" "config/" "app/" "bootstrap/" "phpunit.xml" "server.php" "composer.lock" "database/" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/Controllers/" (23331 23753 846847 566000) "CaptchaController.php" "TopicController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "ActivityController.php" "MediaController.php" "CommentController.php" "AgentController.php" "Auth/" "QuestionController.php" "RankController.php" "AnswerController.php" "Controller.php" "DirectTrainController.php" "HomeController.php" "WeixinController.php" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/Controllers/" (23331 12534 204015 363000) "CaptchaController.php" "TopicController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "ActivityController.php" "MediaController.php" "CommentController.php" "AgentController.php" "Auth/" "QuestionController.php" "RankController.php" "AnswerController.php" "Controller.php" "DirectTrainController.php" "HomeController.php" "WeixinController.php" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Http/" (23331 12528 614812 325000) "Kernel.php" "Controllers/" "helpers.php" "routes.php" "Requests/" "Middleware/" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/config/" (23329 6422 414317 809000) "routers.php" "nginx.conf" "cli_service.php" "test.php" "prod.php" "dev.php" "service.php" "loader.php" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/" (23329 6422 410705 391000) "vendor/" "composer.json" ".git" ".gitignore" "public/" "README.md" ".gitmodules" "cli/" "tests/" "phpunit_report/" "build.xml" "config/" "framework/" "app/" "phpunit.xml" "makefile.sh" "composer.lock" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/Search/" (23329 55990 642279 800000) "SearchHandler.php" "SearchsugPush.php" "SearchTools.php" "SearchConst.php" "SearchCondition.php" "SearchManager.php" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellapp/" (23329 55654 376546 453000) "RemarkController.php" "TopicController.php" "BaseController.php" "HouseresController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "VideoController.php" "CityController.php" "ConfigController.php" "FollowController.php" "CommentController.php" "AgentController.php" "PromotionController.php" "LinknewsController.php" "QuestionController.php" "AnswerController.php" "SearchController.php" "DirecttrainController.php" "UserController.php" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/" (23329 6422 408943 334000) "SearchLogic.php" "ConfigLogic.php" "StrategyLogic.php" "FrameLogic.php" "AnswerLogic.php" "UnitLogic.php" "QMessageLogic.php" "UtmLogic.php" "TopicLogic.php" "HdicLogic.php" "HouseResLogic.php" "HouseLogic.php" "ContentLogic.php" "HouseResSearchLogic.php" "CacheLogic.php" "LinkLogic.php" "DataLogic.php" "Search/" "BaseLogic.php" "QuestionLogic.php" "BaichuanResblockLogic.php" "PanLogic.php" "UcLogic.php" "FollowLogic.php" "VirtualViewLogic.php" "TpLogic.php" "ActivityLogic.php" "ResblockLogic.php" "VrLogic.php" "MarketLogic.php" "BusinessLogic.php" "HouseResFilterLogic.php" "VrMessageLogic.php" "FilterLogic.php" "VideoLogic.php" "LocationLogic.php" "UserLogic.php" "RemarkLogic.php" "RecommendLogic.php" "BuildingLogic.php" "AgentLogic.php" "CommentLogic.php" "WhiteListLogic.php" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Tasks/" (23329 6490 762623 860000) "ResblockTask.php" "BaseTask.php" "CacheTask.php" "VenusTask.php" "VrinfoTask.php" "SearchsugTask.php" "TestTask.php" "AgentTask.php" "CodeToolTask.php" "../" "./")
-
- ("//" (23323 63529 564329 103000) "src/" "pkg/" "cores/" "tmp/" "Volumes/" "dev/" "opt/" "Applications/" "Users/" ".vol/" ".DocumentRevisions-V100/" "private/" ".fseventsd/" "System/" ".Trashes/" "Library/" "var/" "etc/" ".file" "sbin/" "Network/" "installer.failurerequests" "Incompatible Software/" "bin/" ".PKInstallSandboxManager-SystemSoftware/" ".PKInstallSandboxManager/" ".DS_Store" "net/" ".Spotlight-V100/" "usr/" "home/" ".HFS+ Private Directory Data
-/" "../" "./")
-
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Common/" (23328 62886 416083 757000) "HouseResConstants.php" "CommentConstants.php" "VrConstants.php" "Constants.php" "ResblockConstants.php" "SmsConstants.php" "ShellConstants.php" "CacheConst.php" "BizResult.php" "BizException.php" "RecommendConstants.php" "WendaConst.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Logics/" (23328 59177 592800 111000) "SearchLogic.php" "FrameLogic.php" "SearchConditionLogic.php" "AnswerLogic.php" "TopicLogic.php" "ModuleLogic.php" "DirectTrainLogic.php" "SemLogic.php" "BaseLogic.php" "QuestionLogic.php" "ActivityLogic.php" "ResblockLogic.php" "MediaLogic.php" "SearchParserLogic.php" "DiscountLogic.php" "UserLogic.php" "WeixinLogic.php" "AgentLogic.php" "RankLogic.php" "CommentLogic.php" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Clients/" (23328 61782 543775 170000) "AbtestClient.php" "NewhouseClient.php" "SmsClient.php" "NewhouseApiClient.php" "SessionClient.php" "WeixinClient.php" "BaseClient.php" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/" (23329 2632 582546 841000) "SearchLogic.php" "ConfigLogic.php" "StrategyLogic.php" "FrameLogic.php" "AnswerLogic.php" "UnitLogic.php" "QMessageLogic.php" "UtmLogic.php" "TopicLogic.php" "HdicLogic.php" "HouseResLogic.php" "HouseLogic.php" "ContentLogic.php" "HouseResSearchLogic.php" "CacheLogic.php" "LinkLogic.php" "DataLogic.php" "Search/" "BaseLogic.php" "QuestionLogic.php" "BaichuanResblockLogic.php" "PanLogic.php" "UcLogic.php" "FollowLogic.php" "VirtualViewLogic.php" "TpLogic.php" "ActivityLogic.php" "ResblockLogic.php" "VrLogic.php" "MarketLogic.php" "BusinessLogic.php" "HouseResFilterLogic.php" "VrMessageLogic.php" "FilterLogic.php" "VideoLogic.php" "LocationLogic.php" "UserLogic.php" "RemarkLogic.php" "RecommendLogic.php" "BuildingLogic.php" "AgentLogic.php" "CommentLogic.php" "WhiteListLogic.php" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Library/" (23323 46922 98703 245000) "services/" "Parallel.php" "Util.php" "Validators.php" "Request.php" "CacheKey.php" "Search.php" "ImageUpload.php" "Cache.php" "Mail.php" "Sms.php" "CityHelper.php" "../" "./")
 
@@ -178,23 +163,25 @@
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/framework/" (23328 57123 775760 774000) "MonitorClient.php" "vendor/" "composer.json" "SmartyAdapter.php" "Render.php" ".git" "AbstractApiClient.php" "Kafka.php" "NHServiceApi.php" "ErrorHandler.php" "Util.php" "BaseController.php" ".gitignore" "Context.php" "libs/" "MessageQueue.php" "ParameterValidator.php" "Passport.php" "BaseDao.php" "ApiServer.php" "NHException.php" "Cache.php" "AbstractService.php" "HttpRequest.php" "ApiController.php" "ApiClientDemo.php" "composer.lock" "Logger.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellm/" (23328 47708 95912 664000) "RemarkController.php" "TopicController.php" "BaseController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "VideoController.php" "DiscountController.php" "EvaluateController.php" "ActivityController.php" "ConfigController.php" "FollowController.php" "CommentController.php" "AgentController.php" "PromotionController.php" "QuestionController.php" "RankController.php" "VirtualviewController.php" "AnswerController.php" "DirecttrainController.php" "UserController.php" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Logics/Search/" (23327 50208 194814 159000) "SearchHandler.php" "SearchsugPush.php" "SearchTools.php" "SearchConst.php" "SearchCondition.php" "SearchManager.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/config/" (23328 48425 253220 937000) "routers.php" "nginx.conf" "cli_service.php" "test.php" "prod.php" "dev.php" "service.php" "loader.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Shellapp/" (23328 47724 49948 102000) "RemarkController.php" "TopicController.php" "BaseController.php" "HouseresController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "VideoController.php" "CityController.php" "ConfigController.php" "FollowController.php" "CommentController.php" "AgentController.php" "PromotionController.php" "LinknewsController.php" "QuestionController.php" "AnswerController.php" "SearchController.php" "DirecttrainController.php" "UserController.php" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/M/" (23328 47338 710008 283000) "TopicController.php" "BaseController.php" "FrameController.php" "IndexController.php" "ResblockController.php" "VideoController.php" "DiscountController.php" "BannerController.php" "EvaluateController.php" "ActivityController.php" "ConfigController.php" "FollowController.php" "CommentController.php" "AgentController.php" "PromotionController.php" "QuestionController.php" "RankController.php" "VirtualviewController.php" "AnswerController.php" "SearchController.php" "DirecttrainController.php" "UserController.php" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Api/" (23327 50208 189049 520000) "BaseController.php" "FrameController.php" "ResblockController.php" "SearchsrvController.php" "FollowController.php" "VrinfoController.php" "PromotionController.php" "SearchController.php" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/" (23328 41372 274889 166000) "vendor/" "composer.json" ".git" ".gitignore" "public/" "README.md" ".gitmodules" "cli/" "tests/" "phpunit_report/" "build.xml" "config/" "framework/" "app/" "phpunit.xml" "makefile.sh" "composer.lock" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/" (23327 25185 977210 12000) "mars/" "titan/" "polaris/" ".gitignore" "nhservice-api/" "cosmos/" "phoenix/" "moon/" "kepler/" "../" "./")
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Tasks/" (23328 46422 27956 245000) "ResblockTask.php" "BaseTask.php" "CacheTask.php" "VenusTask.php" "VrinfoTask.php" "SearchsugTask.php" "TestTask.php" "AgentTask.php" "CodeToolTask.php" "../" "./")
+
+ ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/Api/" (23327 50208 189049 520000) "BaseController.php" "FrameController.php" "ResblockController.php" "SearchsrvController.php" "FollowController.php" "VrinfoController.php" "PromotionController.php" "SearchController.php" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/Controllers/" (23323 46922 80804 343000) "M/" "Shellm/" "BaseController.php" "Api/" "IndexController.php" "Wechat/" "ErrorController.php" "App/" "Shellpc/" "Shellapp/" "Pc/" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/nhservice-api/app/" (23323 46922 127669 461000) "Controllers/" "Logics/" "Common/" "Library/" "Dao/" "Tasks/" "../" "./")
 
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/config/" (23323 46544 479955 699000) "filesystems.php" "client.php" "page.php" "view.php" "broadcasting.php" "constants.php" "queue.php" "fe.php" "session.php" "cache.php" "database.php" "services.php" "compile.php" "mail.php" "app.php" "auth.php" "ytake-laravel-smarty.php" "../" "./")
-
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/" (23323 46544 462872 872000) "Console/" "Listeners/" "Logics/" "Http/" "Exceptions/" "Library/" "Providers/" "Clients/" "../" "./")
-
- ("/Users/xuwenzhi/hack/docker-php7-phalcon/www/moon/app/Library/" (23327 16506 633723 846000) "PageUtil.php" "Util.php" "Captcha.php" "Ip.php" "Fe.php" "Seo.php" "User.php" "Ipdb/" "Validater.php" "City.php" "Logger.php" "../" "./")
 
  ("/Users/xuwenzhi/hack/docker-php7-phalcon/" (23325 62219 670999 151000) "applogs/" "conf/" ".git/" "docker-compose54.yml" "docker-compose56.yml" "docker-compose.yml" "log/" ".gitignore" ".dockerignore" "README.md" "www/" ".gitmodules" "php/" "bin/" "LICENSE" "cache/" "../" "./")
 
@@ -337,6 +324,16 @@
  ("/home/work/www/galaxy/" (22888 35579 931798 746000) "app/" "GPATH" "./" "bootstrap/" "storage/" "phpunit.xml" "GRTAGS" "env.test" "composer.json" ".git/" ".idea/" ".gitignore" "public/" "composer.lock" "env.prod" "../" "artisan" "README.md" "GTAGS" "database/" ".arcconfig" "node_modules/" "makefile" "config/" "env.dev" "vendor/" "package.json" "server.php" "gulpfile.js" "resources/" ".gitattributes" "tests/")
 
  ("/home/work/www/galaxy/app/Providers/Services/S3/" (22780 19173 226507 676000) "./" "ES3.php" "../" "S3.php")
+
+ ("/home/work/www/galaxy/app/Providers/Services/" (22780 19173 226507 676000) "S3/" "ServiceSso.php" "./" "ServiceMail.php" "../" "ServiceUserCenter.php")
+
+ ("/home/work/www/galaxy/app/Providers/" (22782 60897 453507 400000) "RouteServiceProvider.php" "Constants.php" "Contracts/" "AppServiceProvider.php" "EventServiceProvider.php" "./" "App.php" "AuthServiceProvider.php" "Classes/" "../" "Logger.php" "IM.php" "LeanCloud.php" "Services/" "S3Util.php" "Util.php" "Cache/" "Testing.php")
+
+ ("/home/work/www/galaxy/app/Models/" (22888 35446 573150 204000) ".#Project.php" "./" "Project.php" "BaseModel.php" "../" "#Project.php#" "RoleResource.php" "JsonConfig.php" "RoleUsers.php" "User.php" "RoleGroup.php" "Role.php")
+
+ ("/home/work/www/galaxy/resources/views/project/" (22888 35350 348061 251000) "list.blade.php" "edit.blade.php" "./" "../")
+
+ ("/home/work/www/galaxy/resources/views/agent/" (22780 19173 240507 505000) "./" "taglist.blade.php" "contact.blade.php" "remarkexport.blade.php" "../" "tabbar.blade.php" "configremark.blade.php" "configlist.blade.php")
 )
 
 ;; ----- ido-unc-hosts-cache -----
