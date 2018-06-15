@@ -44,25 +44,12 @@
 (require 'init-lisp)
 (require 'init-elpa)
 
-;;Mail
-(setq send-mail-function (quote smtpmail-send-it))
-(setq smtpmail-smtp-server "smtp.163.com")
-(setq smtpmail-smtp-service 25)
-(setq user-full-name "xuwenzhi")
-(setq user-mail-address "azxuwen701@163.com")
-
-;; 浏览器
-
-
-;; 需要在home下新建.authinfo文件，内容如下（都是你作为发件人的信息，你的邮箱地址，你的邮箱密码）：
-;;   ;; machine smtp.qq.com login 邮箱地址 port 26 password 密码明文
-
 ;; If you want to use latest version
-(add-to-list 'package-archives '("melpa" . "http://elpa.emacs.org/packages"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) 
+(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/"))
+(add-to-list 'package-archives '("marmalade" . "http://elpa.emacs-china.org/marmalade/")) 
 ;;
 ;; ;; If you want to use last tagged version
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
 
 (defun ensure-package-installed (&rest packages)
   "Assure every package is installed, ask for installation if it’s not.
@@ -87,7 +74,6 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; activate installed packages
 (package-initialize)
-
 
 ;; ibuffer做一个漂亮的buffer列表界面
 (require 'ibuffer)
@@ -118,8 +104,21 @@ Return a list of installed packages or nil for every skipped package."
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-oswald)
-;;快捷键专区
+;(color-theme-euphoria)
+;(color-theme-tty-dark)
+;(color-theme-oswald)
+(load-file "~/.emacs.d/elpa/cherry-blossom-theme-20150621.2042/cherry-blossom-theme.el")
+
+;;复制粘贴
+(defun copy-from-osx () 
+  (shell-command-to-string "pbpaste")) 
+(defun paste-to-osx (text &optional push) 
+  (let ((process-connection-type nil)) 
+    (let ((proc (start-process"pbcopy" "*Messages*" "pbcopy"))) 
+      (process-send-string proc text) 
+      (process-send-eof proc)))) 
+(setq interprogram-cut-function 'paste-to-osx) 
+(setq interprogram-paste-function 'copy-from-osx)
 
 (global-set-key (kbd "C-t") 'goto-line)
 
@@ -166,6 +165,8 @@ Return a list of installed packages or nil for every skipped package."
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 (setq web-mode-engines-alist
       '(("php"    . "\\.phtml\\'")
         ("blade"  . "\\.blade\\."))
@@ -185,8 +186,6 @@ Return a list of installed packages or nil for every skipped package."
                (if (string= web-mode-cur-language "css")
                    (setq emmet-use-css-transform t)
                                   (setq emmet-use-css-transform nil)))))
-
-
 
 
 (require 'init-company)
@@ -239,6 +238,15 @@ Return a list of installed packages or nil for every skipped package."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(custom-safe-themes
+   (quote
+    ("bdc90f305ecd4008fd39174adebfcdaf729e38aac1222a872b1f054d97adbc3d" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+ '(fringe-mode 6)
+ '(linum-format (quote dynamic))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

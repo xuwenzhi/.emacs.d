@@ -2,18 +2,18 @@
 ;; ----- smex-history -----
 (
  list-packages
- web-mode
- eww
- goto-line
- mail
- org-mode
- smex
+ package-list-packages
+ customize-themes
+ describe-font
+ describe-coding-system
+ set-default-font
+ customize-face
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 16)
+ (list-packages . 21)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
@@ -24,8 +24,8 @@
  (global-hl-line-mode . 3)
  (list-colors-display . 2)
  (whitespace-newline-mode . 1)
- (color-theme-select . 2)
- (describe-coding-system . 1)
+ (color-theme-select . 5)
+ (describe-coding-system . 2)
  (hi-lock-mode . 3)
  (gtags-find-tag-other-window . 6)
  (goto-line . 4)
@@ -73,4 +73,16 @@
  (mail-text . 1)
  (mail-dont-send . 1)
  (mail-bcc . 1)
+ (replace-string . 8)
+ (eshell . 4)
+ (gitlab-mode . 1)
+ (todo-show . 1)
+ (align-regexp . 4)
+ (package-menu-mark-delete . 1)
+ (package-list-packages . 4)
+ (byte-compile-file . 1)
+ (customize-themes . 2)
+ (customize-face . 1)
+ (set-default-font . 1)
+ (describe-font . 3)
 )
