@@ -1,24 +1,24 @@
 
 ;; ----- smex-history -----
 (
+ gtags-find-with-grep
+ php-browse-manual
+ todo-mode
  list-packages
- package-list-packages
- customize-themes
- describe-font
- describe-coding-system
- set-default-font
- customize-face
+ replace-string
+ org-mode
+ eww
 )
 
 ;; ----- smex-data -----
 (
  (start-kbd-macro . 1)
- (list-packages . 21)
+ (list-packages . 22)
  (smex . 4)
  (bs-cycle-next . 1)
  (helm-mode . 1)
  (winner-mode-enable . 3)
- (gtags-find-with-grep . 23)
+ (gtags-find-with-grep . 24)
  (gtags-find-tag . 8)
  (global-hl-sexp-mode . 1)
  (global-hl-line-mode . 3)
@@ -44,7 +44,7 @@
  (org-mode . 7)
  (org-info . 1)
  (org-goto . 1)
- (php-mode . 10)
+ (php-mode . 11)
  (ac-php-core-eldoc-setup . 1)
  (ac-php-remake-tags-all . 2)
  (ac-php-remake-tags . 1)
@@ -85,4 +85,11 @@
  (customize-face . 1)
  (set-default-font . 1)
  (describe-font . 3)
+ (todo-mode . 1)
+ (todo-edit-item . 1)
+ (phpunit-group . 1)
+ (php-search-documentation . 1)
+ (php-current-class . 1)
+ (php-enable-psr2-coding-style . 1)
+ (php-browse-manual . 1)
 )

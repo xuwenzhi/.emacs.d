@@ -125,6 +125,7 @@ Return a list of installed packages or nil for every skipped package."
 ;;php.
 (require 'php-mode)
 (php-mode)
+(php-enable-psr2-coding-style)
 
 (require 'web-mode)
 (defun bs-web-mode-hook ()
