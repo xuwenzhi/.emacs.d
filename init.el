@@ -39,17 +39,23 @@
 (setq emacs-load-start-time (current-time))
 
 ;;为了org-mode
-(setq ispell-program-name "/usr/bin/aspell")
+(setq ispell-program-name "/usr/local/bin/aspell")
 
 (require 'init-lisp)
 (require 'init-elpa)
 
+
+(require 'package)
+
 ;; If you want to use latest version
-(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/"))
-(add-to-list 'package-archives '("marmalade" . "http://elpa.emacs-china.org/marmalade/")) 
+;(add-to-list 'package-archives '("elpa" . "http://elpa.emacs-china.org/gnu/"))
+(add-to-list 'package-archives
+                          '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;(add-to-list 'package-archives '("marmalade" . "http://elpa.emacs-china.org/marmalade/")) 
+
 ;;
 ;; ;; If you want to use last tagged version
-(add-to-list 'package-archives '("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
+;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (defun ensure-package-installed (&rest packages)
   "Assure every package is installed, ask for installation if it’s not.
@@ -75,11 +81,6 @@ Return a list of installed packages or nil for every skipped package."
 ;; activate installed packages
 (package-initialize)
 
-;; ibuffer做一个漂亮的buffer列表界面
-(require 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;;switch-window
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 (global-set-key (kbd "C-x 1") 'switch-window-then-maximize)
@@ -191,6 +192,29 @@ Return a list of installed packages or nil for every skipped package."
 ;;自动补全界面
 (require 'auto-complete-config)
 
+;;flycheck
+(package-install 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(flycheck-define-checker my-php
+                           "A PHP syntax checker using the PHP command line interpreter.
+                         
+                         See URL `http://php.net/manual/en/features.commandline.php'."
+                           :command ("php" "-l" "-d" "error_reporting=E_ALL" "-d" "display_errors=1"
+                                                 "-d" "log_errors=0" source)
+                             :error-patterns
+                               ((error line-start (or "Parse" "Fatal" "syntax") " error" (any ":" ",") " "
+                                                 (message) " in " (file-name) " on line " line line-end))
+                                 :modes (php-mode php+-mode web-mode))
+(flycheck-select-checker 'my-php)
+(flycheck-mode t)
+
+
+;; 自动匹配括号和引号 
+(require 'autopair)
+(autopair-global-mode) ;; to enable in all buffers')
+
 ;;设定默认补全库来源——自动设定，而不是每次更新都要重新写
 (setq auto-complete-directory
 (if load-file-name
@@ -232,9 +256,23 @@ Return a list of installed packages or nil for every skipped package."
                (if (string= web-mode-cur-language "css")
                    (setq emmet-use-css-transform t)
                                   (setq emmet-use-css-transform nil)))))
+(setq web-mode-ac-sources-alist
+            '(("css" . (ac-source-words-in-buffer ac-source-css-property))
+                      ("html" . (ac-source-words-in-buffer ac-source-abbrev))
+                              ("php" . (ac-source-words-in-buffer
+                                                           ac-source-words-in-same-mode-buffers
+                                                                             ac-source-dictionary))))
+
 
 
 (require 'init-company)
+
+;;markdown
+(autoload 'markdown-mode "markdown-mode.el"
+             "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; 当前行高亮,其实是隐藏掉高亮
 (require 'hl-line)

@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- align-regexp
- eshell
- todo-show
+ package-list-packages
+ package-install
+ package-refresh-contents
+ revert-buffer
  list-packages
  replace-string
- web-mode
- eww
+ org-mode
 )
 
 ;; ----- smex-data -----
@@ -78,4 +78,13 @@
  (gitlab-mode . 1)
  (todo-show . 1)
  (align-regexp . 5)
+ (revert-buffer . 2)
+ (package-install . 23)
+ (package-list-packages . 15)
+ (package-refresh-contents . 6)
+ (el-get-install . 6)
+ (markdown-preview . 4)
+ (markdown-mode . 1)
+ (el-get-reinstall . 1)
+ (el-get-remove . 1)
 )

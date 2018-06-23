@@ -52,3 +52,10 @@ site-lisp/package/
 /.historian
 /.uptimes.el
 /rake.cache
+company-statistics-cache.el
+ido.last
+recentf
+places
+/eshell
+history
+.session
