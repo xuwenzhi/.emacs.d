@@ -38,8 +38,6 @@
 
 (setq emacs-load-start-time (current-time))
 
-;;为了org-mode
-(setq ispell-program-name "/usr/local/bin/aspell")
 
 (require 'init-lisp)
 (require 'init-elpa)
@@ -81,6 +79,14 @@ Return a list of installed packages or nil for every skipped package."
 ;; activate installed packages
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(require 'el-get)
+(el-get 'sync)
+(package-initialize)
+
+;;disable menu bar.
+(menu-bar-mode -1)
+
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 (global-set-key (kbd "C-x 1") 'switch-window-then-maximize)
@@ -88,7 +94,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq switch-window-increase 6) ;Increase or decrease this number.
 (setq switch-window-threshold 2)
 (setq switch-window-auto-resize-window t)
-(setq switch-window-default-window-size 0.8) ;80% of frame size
+(setq switch-window-default-window-size 0.55) ;80% of frame size
 
 ;;ace-jump
 (autoload
@@ -103,12 +109,6 @@ Return a list of installed packages or nil for every skipped package."
 ;; 表格库
 (autoload 'table-insert "table" "WYGIWYS table editor")
 
-(require 'color-theme)
-(color-theme-initialize)
-;(color-theme-euphoria)
-;(color-theme-tty-dark)
-;(color-theme-oswald)
-(load-file "~/.emacs.d/elpa/cherry-blossom-theme-20150621.2042/cherry-blossom-theme.el")
 
 ;;复制粘贴
 (defun copy-from-osx () 
@@ -120,9 +120,6 @@ Return a list of installed packages or nil for every skipped package."
       (process-send-eof proc)))) 
 (setq interprogram-cut-function 'paste-to-osx) 
 (setq interprogram-paste-function 'copy-from-osx)
-
-(global-set-key (kbd "C-c t") 'goto-line)
-(global-set-key (kbd "C-c f")  'gtags-find-tag-other-window)
 
 ;;copy without cursor
 (defun get-point (symbol &optional arg)
@@ -188,9 +185,16 @@ Return a list of installed packages or nil for every skipped package."
 
 
 (load "init-gtags")
-;(require 'auto-complete)
-;;自动补全界面
+
+
+;;Auto Complete
+(require 'auto-complete)
 (require 'auto-complete-config)
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(setq ac-auto-start nil)
+(set-face-background 'ac-candidate-face "lightgray")
+(set-face-underline 'ac-candidate-face "darkgray")
 
 ;;flycheck
 (package-install 'exec-path-from-shell)
@@ -209,22 +213,25 @@ Return a list of installed packages or nil for every skipped package."
                                  :modes (php-mode php+-mode web-mode))
 (flycheck-select-checker 'my-php)
 (flycheck-mode t)
+;;语法检测
+(setq ispell-program-name "/usr/local/bin/aspell")
 
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+(require 'php-auto-yasnippets)
+(payas/ac-setup)
 
 ;; 自动匹配括号和引号 
 (require 'autopair)
 (autopair-global-mode) ;; to enable in all buffers')
 
-;;设定默认补全库来源——自动设定，而不是每次更新都要重新写
-(setq auto-complete-directory
-(if load-file-name
-(file-name-directory load-file-name)
-(expand-file-name "~/.emacs.d/elpa/auto-complete")))
-
-(add-to-list 'ac-dictionary-directories (concat auto-complete-directory
-"/dict"))
-
-(ac-config-default)
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m") 'mc/edit-lines)
+(global-set-key (kbd "C-c f") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c b") 'mc/mark-previous-like-this)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -246,24 +253,6 @@ Return a list of installed packages or nil for every skipped package."
         ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
         ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
 
-(add-hook 'web-mode-before-auto-complete-hooks
-          '(lambda ()
-             (let ((web-mode-cur-language
-                    (web-mode-language-at-pos)))
-               (if (string= web-mode-cur-language "php")
-                   (yas-activate-extra-mode 'php-mode)
-                 (yas-deactivate-extra-mode 'php-mode))
-               (if (string= web-mode-cur-language "css")
-                   (setq emmet-use-css-transform t)
-                                  (setq emmet-use-css-transform nil)))))
-(setq web-mode-ac-sources-alist
-            '(("css" . (ac-source-words-in-buffer ac-source-css-property))
-                      ("html" . (ac-source-words-in-buffer ac-source-abbrev))
-                              ("php" . (ac-source-words-in-buffer
-                                                           ac-source-words-in-same-mode-buffers
-                                                                             ac-source-dictionary))))
-
-
 
 (require 'init-company)
 
@@ -274,14 +263,46 @@ Return a list of installed packages or nil for every skipped package."
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+
+;; org-mode
+;; The following lines are always needed. Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when
+                                        ; global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "VERIFYING" "|" "DONE")))
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+;; child work
+(defun org-summary-todo (n-done n-not-done)
+      "Switch entry to DONE when all subentries are done, to TODO otherwise."
+      (let (org-log-done org-log-states)   ; turn off logging
+        (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+    
+    (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+;; global todo list
+(setq org-agenda-files (list "~/.todos/work.org"
+                             "~/.todos/projects.org"
+                             "~/.todos/home.org"
+                             "~/.todos/records.org"))
+
+(require 'org-alert)
+;(setq alert-default-style 'libnotify)
+(setq alert-default-style 'notifier)
+
+
 ;; 当前行高亮,其实是隐藏掉高亮
 (require 'hl-line)
 (or (facep 'my-hl-line-face) (make-face 'my-hl-line-face))
 (setq hl-line-face 'my-hl-line-face)
 (face-spec-set 'my-hl-line-face '((t (
                                       :background "DodgerBlue3"
-                                                  ;;:bold
-                                                  ;;:weight nil
+                                                  :bold
+                                                  :weight nil
                                       :inverse-video nil
                                       ))))
 (defun wcy-color-theme-adjust-hl-mode-face()
@@ -312,6 +333,81 @@ Return a list of installed packages or nil for every skipped package."
                   my-color
                   "")))))))
 (wcy-color-theme-adjust-hl-mode-face)
+
+(require 'projectile)
+
+;; 默认全局使用
+(projectile-global-mode)
+;; 默认打开缓存
+(setq projectile-enable-caching t)
+;; helm-projectile 使用f5键打开默认文件搜索
+(global-set-key [f5] 'helm-projectile)
+;; Grep in a projectile
+(global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+;; projectile magit
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+(require 'helm-projectile)
+(helm-projectile-on)
+
+(require 'neotree)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq projectile-switch-project-action 'neotree-projectile-action)
+(defun neotree-ffip-project-dir ()
+      "Open NeoTree using the git root."
+          (interactive)
+              (let ((project-dir (ffip-project-root))
+                              (file-name (buffer-file-name)))
+                      (if project-dir
+                                  (progn
+                                                (neotree-dir project-dir)
+                                                            (neotree-find file-name))
+                                          (message "Could not find git project root."))))
+  
+(global-set-key [f8] 'neotree-toggle)
+(define-key global-map (kbd "C-c C-p") 'neotree-ffip-project-dir)
+
+(define-key global-map (kbd "C-x C-b") 'projectile-ibuffer)
+(setq helm-buffers-list-cache (cdr (projectile-project-buffer-names)))
+(global-set-key [f1] 'helm-projectile-switch-project)
+(global-set-key [f2] 'helm-projectile-find-file)
+(global-set-key [f3] 'helm-M-x)
+(global-set-key [f4] 'projectile-find-tag)
+(global-set-key [f5] 'helm-projectile-grep)
+(global-set-key [f6] 'align-regexp)
+(global-set-key [f7] 'revert-buffer)
+(global-set-key [f8] 'goto-line)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+
+
+;; eshell
+(with-eval-after-load "esh-opt"
+  (autoload 'epe-theme-lambda "eshell-prompt-extras")
+  (setq eshell-highlight-prompt nil
+                eshell-prompt-function 'epe-theme-lambda))
+
+;; w3m
+(add-to-list 'exec-path "/usr/local/bin/w3m")
+(require 'w3m)
+(setq w3m-use-favicon nil)
+(setq w3m-command-arguments '("-cookie" "-F"))
+(setq w3m-use-cookies t)
+
+
+(require 'color-theme)
+(color-theme-initialize)
+;(add-hook 'after-init-hook 
+;	  (lambda () (load-theme 'cyberpunk t)))
+;(color-theme-euphoria)
+;(color-theme-tty-dark)
+;(color-theme-oswald)
+(load-file "~/.emacs.d/elpa/cherry-blossom-theme-20150621.2042/cherry-blossom-theme.el")
+(custom-set-faces
+ '(magit-diff-added ((t (:background "black" :foreground "green3"))))
+ '(magit-diff-removed ((t (:background "black" :foreground "red3")))))
+
 
 ;;ruby mode
 (autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)

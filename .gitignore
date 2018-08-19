@@ -59,3 +59,7 @@ places
 /eshell
 history
 .session
+projectile.cache
+.smex-items
+ido.last
+places
