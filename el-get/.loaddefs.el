@@ -188,11 +188,44 @@ Display a list of packages.
 
 ;;;***
 
+;;;### (autoloads nil "wakatime-mode/wakatime-mode" "wakatime-mode/wakatime-mode.el"
+;;;;;;  (23427 46400 227108 980000))
+;;; Generated autoloads from wakatime-mode/wakatime-mode.el
+
+(autoload 'wakatime-mode "wakatime-mode/wakatime-mode" "\
+Toggle WakaTime (WakaTime mode).
+
+\(fn &optional ARG)" t nil)
+
+(defvar global-wakatime-mode nil "\
+Non-nil if Global-Wakatime mode is enabled.
+See the command `global-wakatime-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-wakatime-mode'.")
+
+(custom-autoload 'global-wakatime-mode "wakatime-mode/wakatime-mode" nil)
+
+(autoload 'global-wakatime-mode "wakatime-mode/wakatime-mode" "\
+Toggle Wakatime mode in all buffers.
+With prefix ARG, enable Global-Wakatime mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Wakatime mode is enabled in all buffers where
+`(lambda nil (wakatime-mode 1))' would do it.
+See `wakatime-mode' for more information on Wakatime mode.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil nil ("el-get/el-get-autoloading.el" "el-get/el-get-build.el"
 ;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
 ;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
 ;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
-;;;;;;  "el-get/el-get-status.el") (23417 7843 234600 0))
+;;;;;;  "el-get/el-get-status.el" "wakatime-mode/wakatime-mode-test.el")
+;;;;;;  (23427 46400 929514 0))
 
 ;;;***
 
