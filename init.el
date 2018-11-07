@@ -52,12 +52,15 @@
 
 ;; If you want to use latest version
 ;(add-to-list 'package-archives '("elpa" . "http://elpa.emacs-china.org/gnu/"))
-(add-to-list 'package-archives
-                          '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://elpa.emacs-china.org/marmalade/"))
+
+;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;(add-to-list 'package-archives
+;                          '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;;(add-to-list 'package-archives '("marmalade" . "http://elpa.emacs-china.org/marmalade/"))
 ;;
 ;; ;; If you want to use last tagged version
-;(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/"))
+(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/"))
+;(add-to-list 'package-archives '("melpa" . "http://melpa.org"))
 
 (defun ensure-package-installed (&rest packages)
   "Assure every package is installed, ask for installation if it’s not.
@@ -450,6 +453,11 @@ Return a list of installed packages or nil for every skipped package."
 (global-set-key [f8] 'goto-line)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+;;rest client 
+(require 'restclient)
+(require 'restclient-helm)
+(add-to-list 'auto-mode-alist '("\\.rc\\'" . restclient-mode))
 
 ;; eshell
 (with-eval-after-load "esh-opt"
