@@ -123,6 +123,12 @@ Return a list of installed packages or nil for every skipped package."
 (setq switch-window-default-window-size '(0.8 . 0.6)) ;80% width and 60% height of frame
 (setq switch-window-minibuffer-shortcut ?z)
 
+;;rust
+(require 'rust-mode)
+(setq rust-format-on-save t) ;; for rust-format
+(add-hook 'rust-mode-hook 'cargo-minor-mode) ;; for cargo
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
 ;;ace-jump
 (autoload
     'ace-jump-mode
