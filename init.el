@@ -16,6 +16,9 @@
 (global-linum-mode 1) ; always show line numbers
 (setq linum-format "%2d|")  ;set format
 
+;; all backups goto ~/.backups instead in the current directory
+(setq backup-directory-alist (quote (("." . "~/.backups"))))
+
 (display-time)
 (setq calendar-week-start-day 1)
 
@@ -202,6 +205,12 @@ Return a list of installed packages or nil for every skipped package."
                               web-mode-code-indent-offset 2))
 
 (add-hook 'web-mode-hook 'bs-web-mode-hook)
+
+;; golang
+(autoload 'go-mode "go-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(add-hook 'before-save-hook #'gofmt-before-save)
+
 
 ;;javascript
 (require 'init-javascript)
@@ -454,7 +463,7 @@ Return a list of installed packages or nil for every skipped package."
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
-;;rest client 
+;;rest client
 (require 'restclient)
 (require 'restclient-helm)
 (add-to-list 'auto-mode-alist '("\\.rc\\'" . restclient-mode))
@@ -475,7 +484,8 @@ directory to make multiple eshell windows easier."
   (let* ((parent (if (buffer-file-name)
                      (file-name-directory (buffer-file-name))
                    default-directory))
-         (height (/ (window-total-height) 5))
+         (height (/ (window-total-height) 3))
+         (width (/ (window-total-width) 3))
          (name   (car (last (split-string parent "/" t)))))
     (split-window-vertically (- height))
     (other-window 1)
