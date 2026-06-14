@@ -63,3 +63,8 @@ projectile.cache
 .smex-items
 ido.last
 places
+
+# generated/downloaded data (added during 2026 cleanup)
+/emojis/
+/transient/
+/.last-package-update-day
