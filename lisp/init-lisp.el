@@ -11,7 +11,7 @@
                      (shell-command-to-string "fortune"))))
                 (concat ";; Happy Hacking!\n"
                        ; (or user-login-name "")
-                        "      - Emacs loves you!\n\n")))
+                        ";;      - Emacs loves you!\n\n")))
 
 ;; racket
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . lisp-mode))

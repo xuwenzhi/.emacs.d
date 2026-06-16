@@ -142,6 +142,14 @@
 ;; Move between windows with M-<arrow> (overrides M-left/M-right word motion)
 (windmove-default-keybindings 'meta)
 
+;; Mouse support in the terminal (iTerm2): click to place point, drag the
+;; mode line or the vertical window border to resize windows, wheel to scroll.
+;; Hold Option (or Fn) in iTerm2 for native click-drag text selection.
+(unless (display-graphic-p)
+  (xterm-mouse-mode 1)
+  (setq mouse-wheel-scroll-amount '(3 ((shift) . 1))
+        mouse-wheel-progressive-speed nil))
+
 ;;rust
 ;(require 'rust-mode)
 ;(setq rust-format-on-save t) ;; for rust-format
@@ -239,7 +247,94 @@
 ;; Scoped to eglot-mode-map, so helm-gtags' M-. still applies everywhere else.
 (with-eval-after-load 'eglot
   (define-key eglot-mode-map (kbd "M-.") #'xref-find-definitions)
-  (define-key eglot-mode-map (kbd "M-,") #'xref-go-back))
+  (define-key eglot-mode-map (kbd "M-,") #'xref-go-back)
+  ;; C-c a: apply a clangd/clang-tidy quick-fix or refactor at point.
+  (define-key eglot-mode-map (kbd "C-c a") #'eglot-code-actions)
+  ;; Prefer Homebrew's LLVM clangd (has clang-tidy; Apple's clangd strips it).
+  ;; --query-driver lets it discover the Apple SDK/system headers via the
+  ;; toolchain compilers. Falls back to PATH clangd if LLVM isn't installed.
+  (let ((llvm-clangd "/opt/homebrew/opt/llvm/bin/clangd"))
+    (when (file-executable-p llvm-clangd)
+      (add-to-list 'eglot-server-programs
+                   `((c++-mode c-mode c-ts-mode c++-ts-mode)
+                     . (,llvm-clangd
+                        "--clang-tidy"          ; run clang-tidy checks (from config.yaml)
+                        "--header-insertion=never"
+                        "--query-driver=/usr/bin/clang,/usr/bin/clang++,/opt/homebrew/bin/*,/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/*"))))))
+
+;; In eglot-managed buffers, let eglot's flymake (clangd-backed, knows the
+;; include paths from compile_flags.txt / clangd config) be the only diagnostics
+;; source. flycheck's standalone clang/gcc checkers don't see those flags and
+;; report false errors (e.g. "'asio.hpp' file not found"), so turn it off here.
+(add-hook 'eglot-managed-mode-hook
+          (lambda ()
+            (when (bound-and-true-p flycheck-mode)
+              (flycheck-mode -1))))
+
+;; libc / syscall man pages in C buffers (sockets, etc.). macOS ships the
+;; section 2/3 pages in the SDK manpath, which `man' already searches.
+;; C-c d  -> man page for the symbol at point (no prompt). ("C-c m" is the
+;;           multiple-cursors prefix, so man lives on "d" for doc.)
+;; C-h .  -> eglot/eldoc signature for the symbol at point (lighter weight).
+(require 'man)
+(setq Man-notify-method 'aggressive) ; pop and select the *Man* window right away
+;; macOS ships BSD sed, but Emacs's man pipeline hardcodes GNU-octal regexes
+;; (\o001 etc.), so BSD sed fails with "RE error: invalid character range".
+;; Switch to gsed, then rebuild Man-filter-list (it is baked once at load with
+;; the old sed, so the setq alone is not enough).
+(when (executable-find "gsed")
+  (setq Man-sed-command "gsed")
+  (Man-init-defvars))
+;; Show the *Man* buffer in a narrow window on the right (~1/4 of the frame).
+(add-to-list 'display-buffer-alist
+             '("\\`\\*Man "
+               (display-buffer-in-side-window)
+               (side . right)
+               (window-width . 0.25)))
+(defun my/man-topic (sym)
+  "Return a man topic for SYM, preferring syscalls (2) then libc (3).
+Otherwise return SYM bare. This avoids e.g. `bind' resolving to the shell
+builtin(1) instead of bind(2) the socket call."
+  (or (seq-some (lambda (sec)
+                  (when (eq 0 (call-process "man" nil nil nil "-w" sec sym))
+                    (concat sec " " sym)))
+                '("2" "3"))
+      sym))
+(defun my/man-at-point ()
+  "Show the man page for the C symbol at point; prompt if there is none.
+Format the page to ~1/4 of the frame width so it fits the side window."
+  (interactive)
+  (let* ((sym (current-word t))
+         (Man-width (max 40 (round (* 0.25 (frame-width)))))
+         (Man-width-max nil))
+    (if (and sym (not (string-empty-p sym)))
+        (man (my/man-topic sym))
+      (call-interactively #'man))))
+(with-eval-after-load 'cc-mode
+  (define-key c-mode-base-map (kbd "C-c d") #'my/man-at-point))
+(with-eval-after-load 'c-ts-mode
+  (define-key c-ts-base-mode-map (kbd "C-c d") #'my/man-at-point))
+
+;; In shell / comint buffers, make up/down browse command history ONLY when
+;; point is at the prompt (input area). Up in the output, they move the cursor
+;; normally so you can navigate and select text to copy. M-p / M-n always do
+;; history. The "matching" history cycles entries matching what you've typed
+;; (full history when the prompt is empty).
+(defun my/comint-up (arg)
+  "History at the prompt, otherwise move up a line."
+  (interactive "p")
+  (if (comint-after-pmark-p)
+      (comint-previous-matching-input-from-input arg)
+    (previous-line arg)))
+(defun my/comint-down (arg)
+  "History at the prompt, otherwise move down a line."
+  (interactive "p")
+  (if (comint-after-pmark-p)
+      (comint-next-matching-input-from-input arg)
+    (next-line arg)))
+(with-eval-after-load 'comint
+  (define-key comint-mode-map (kbd "<up>")   #'my/comint-up)
+  (define-key comint-mode-map (kbd "<down>") #'my/comint-down))
 
 ;;php.
 (require 'flymake-proc) ; php-mode references flymake-proc-allowed-file-name-masks at load time
@@ -599,6 +694,7 @@
  '(package-selected-packages nil))
 
 (require 'neotree)
+(global-set-key (kbd "C-c t") 'neotree-toggle) ; toggle the file tree
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (setq projectile-switch-project-action 'neotree-projectile-action)
 ;; Select a file, then close neotree
@@ -643,6 +739,20 @@
 (global-set-key [f8] 'revert-buffer)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+;; Helm for file / path lookup. helm-mode routes generic completion (incl.
+;; read-file-name) through helm; the explicit binds give the nicer dedicated UIs.
+(helm-mode 1)
+(recentf-mode 1)                                  ; track recently opened files
+(setq recentf-max-saved-items 200)
+(global-set-key (kbd "C-x C-f") 'helm-find-files) ; incremental path navigation (TAB descends, C-l goes up)
+(global-set-key (kbd "C-x f")   'helm-for-files)  ; one prompt: buffers + recentf + files + locate
+(global-set-key (kbd "C-c f")   'helm-recentf)    ; recently opened files
+(global-set-key (kbd "C-c L")   'helm-locate)     ; system-wide search
+;; macOS has no locate db; use Spotlight (mdfind). helm passes "" for the case
+;; flag on non-`locate' commands, so "mdfind -name %s %s" formats correctly.
+(when *is-a-mac*
+  (setq helm-locate-command "mdfind -name %s %s"))
 
 ;;rest client
 (require 'restclient)
@@ -758,9 +868,10 @@
 ;;   Start a session: M-x claude-code-run   |   Menu: C-c c
 ;;----------------------------------------------------------------------------
 (setq vterm-always-compile-module t) ; rebuild vterm module silently after updates
-;; Lighten vterm's dim "bright black" color (used for Claude Code's input hint).
+;; Dim vterm's "bright black" color (used for Claude Code's input placeholder)
+;; so the hint reads as faint help text, not as already-typed input.
 (with-eval-after-load 'vterm
-  (set-face-foreground 'vterm-color-bright-black "gray65"))
+  (set-face-foreground 'vterm-color-bright-black "gray40"))
 
 ;; vterm is a terminal: turn off line numbers / hl-line. The line-number margin
 ;; changes vterm's reported width mid-render (see vterm--get-margin-width), which
@@ -801,13 +912,20 @@
         (vterm--window-adjust-process-window-size vterm--process (list win)))))
   (redraw-display))
 (with-eval-after-load 'claude-code-ui
-  (define-key claude-code-vterm-mode-map (kbd "C-c r") #'my/claude-code-redraw-buffer))
+  (define-key claude-code-vterm-mode-map (kbd "C-c r") #'my/claude-code-redraw-buffer)
+  ;; C-c C-e: enter vterm read-only "copy mode" to scroll back, move point, and
+  ;; select/copy text. RET copies the region and exits; C-c C-t or q also exits.
+  ;; (claude-code rebinds vterm's default C-c C-t to its transient menu.)
+  (define-key claude-code-vterm-mode-map (kbd "C-c C-e") #'vterm-copy-mode))
 
 (use-package claude-code
   :ensure t
   :custom
-  ;; Always launch with permission checks bypassed
-  (claude-code-executable "claude --dangerously-skip-permissions")
+  ;; Always launch with permission checks bypassed.
+  ;; `env FORCE_COLOR=1' forces Claude Code to 16-color so its input placeholder
+  ;; falls back to ANSI bright-black (dimmed via `vterm-color-bright-black' above)
+  ;; instead of a 24-bit color that vterm renders as an unretargetable RGB cell.
+  (claude-code-executable "env FORCE_COLOR=1 claude --dangerously-skip-permissions")
   :init
   (defun my/claude-code-send-region-with-context (context)
     "Send the active region to Claude Code, prefixed with additional CONTEXT."

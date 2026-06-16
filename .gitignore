@@ -68,3 +68,9 @@ places
 /emojis/
 /transient/
 /.last-package-update-day
+# projectile known-projects (machine-specific paths)
+/projects
+# async byte-compile log
+/async-bytecomp.log
+# downloaded el-get package
+/el-get/wakatime-mode/
