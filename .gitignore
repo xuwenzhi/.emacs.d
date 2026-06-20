@@ -72,5 +72,5 @@ places
 /projects
 # async byte-compile log
 /async-bytecomp.log
-# downloaded el-get package
-/el-get/wakatime-mode/
+# el-get removed (unused); ignore if ever regenerated
+/el-get/

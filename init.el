@@ -106,14 +106,8 @@
 ;; activate installed packages
 ;(package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require 'el-get)
-(el-get 'sync)
-
 ;;disable menu bar.
 (menu-bar-mode -1)
-
-;;(global-wakatime-mode 1)
 
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
